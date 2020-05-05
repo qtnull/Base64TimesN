@@ -17,6 +17,8 @@ No, it **isn't**, base64 is just an **encoding scheme and NOT an encryption algo
 
 U got it? GUUD. Let's dive into the nerdy stuff
 
+![Pani Poni Dash - Dancing GIF](/docs/__pani_poni_dash__96c16f2f4669e8f7b7e7717dbda89411.gif)
+
 # Using this module
 This is a Python3 module, you can compile it to get better performance (but not much) using the `setup.py` or just use `base64N.py` and `stdbase64.py`
 
@@ -78,3 +80,8 @@ This function will read the `fileObj` file object (`open()`) supplied in the par
 `fileObj` (`open()` object with open mode `rb`) - input data<br>
 `loopTime` (int) - how many times should be `fileObj` encoded<br>
 `debug` (bool) - show additional information: shows the "encrypting" process, how many times `byte` has been encoded
+
+# End
+Congratulations, you have reached the end of this README (this is a documantation though). Here is some [resource](https://www.youtube.com/watch?v=dQw4w9WgXcQ) that might help you.
+
+![I have achieved comedy](/docs/i have achieved komedi.jpg)
