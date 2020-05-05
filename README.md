@@ -84,4 +84,4 @@ This function will read the `fileObj` file object (`open()`) supplied in the par
 # End
 Congratulations, you have reached the end of this README (this is a documantation though). Here is some [resource](https://www.youtube.com/watch?v=dQw4w9WgXcQ) that might help you.
 
-![I have achieved comedy](/docs/i have achieved komedi.jpg)
+![I have achieved comedy](/docs/i_have_achieved_komedi.jpg)
