@@ -23,6 +23,7 @@ U got it? GUUD. Let's dive into the nerdy stuff
 This is a Python3 module, you can compile it to get better performance (but not much) using the `setup.py` or just use `base64N.py` and `stdbase64.py` (Please note that if you decided to use `setup.py` to compile the module, make sure you install cython by `pip3 install cython` and `python3 setup.py build_ext --inplace` to compile it)
 
 `base64N.py` is the main logic code for encoding or decoding base64 several times.
+
 `stdbase64.py` is just the `base64` module taken from the standard module library from Python 3.8.1 (specifically, taken from Windows x64 installation of Python 3.8.1)
 
 To import them to your script, make sure the `base64N.py` and `stdbase64.py` (or the two compiled files if you used the `setup.py`) is in the same folder or installed in your python module library. And just import them:
