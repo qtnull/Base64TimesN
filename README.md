@@ -71,16 +71,16 @@ This function will take the `byte` input parameter and decode it self with base6
 ### `DecryptFromFile(fileObj, loopTime, debug = False)`
 This function will read the `fileObj` file object (`open()`) supplied in the parameter and decode the content inside the file `loopTime` times, then returns the decrypted content as a bytes object.
 #### Parameters
-`fileObj` (`open()` object with open mode `rb`) - input data<br>
+`fileObj` (`open()` file object with open mode `rb`) - input data<br>
 `loopTime` (int) - how many times should be `fileObj` decoded<br>
-`debug` (bool) - show additional information: shows the "decrypting" process, how many times `byte` has been decoded
+`debug` (bool) - show additional information: shows the "decrypting" process, how many times `fileObj` has been decoded
 
 ### `EncryptFromFile(fileObj, loopTime, debug = False)`
 This function will read the `fileObj` file object (`open()`) supplied in the parameter and encode the content inside the file `loopTime` times, then returns the encrypted content as a bytes object.
 #### Parameters
-`fileObj` (`open()` object with open mode `rb`) - input data<br>
+`fileObj` (`open()` file object with open mode `rb`) - input data<br>
 `loopTime` (int) - how many times should be `fileObj` encoded<br>
-`debug` (bool) - show additional information: shows the "encrypting" process, how many times `byte` has been encoded
+`debug` (bool) - show additional information: shows the "encrypting" process, how many times `fileObj` has been encoded
 
 # End
 Congratulations, you have reached the end of this README (this is a documantation though). Here is some [resource](https://www.youtube.com/watch?v=dQw4w9WgXcQ) that might help you.
