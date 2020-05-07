@@ -7,6 +7,9 @@ If you are using Solid State Drive, **DO NOT TRY TO TEST THIS MODULE REPEATEDLY 
 
 **I AM NOT RESPONSIBLE WITH ANYTHING YOU DO WITH THIS MODULE**
 
+# Documentation Language / 文档语言
+如果你看不懂英语，那就打开这个Repository的[`README.zh.md`](/README.zh.md)吧，[`README.zh.md`](/README.zh.md)是这个文件的中文翻译版本。
+
 # Does this have any practical use?
 No, it doesn't. It's basically a base64 *Matroska*. I see no practical use besides benchmarking (either CPU, HDD, SSD or even RAM) or destroying SSD and hogging up the CPU, you may even get a memory overflow because I don't really trust Python's memory management.
 
