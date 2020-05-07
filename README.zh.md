@@ -30,57 +30,57 @@ To import them to your script, make sure the `base64N.py` and `stdbase64.py` (or
 
 `import base64N`
 
-## Functions
+## 函数
 ### `Encrypt(byte, loopTime, debug = False)`
-This function will take the `byte` input parameter and encode it self with base64 `loopTime` times, then returns the encrypted content as a bytes object.
-#### Parameters
-`byte` (bytes) - input data<br>
-`loopTime` (int) - how many times should be `byte` encoded<br>
-`debug` (bool) - show additional information: shows the "encrypting" process, how many times `byte` has been encoded
+此函数将会把`byte`参数传入的数据使用Base64编码`loopTime`次，然后返回加密后的数据，返回的数据类型为`bytes`。
+#### 参数
+`byte` (bytes) - 输入数据<br>
+`loopTime` (int) - `byte`应该重复被base64编码几次<br>
+`debug` (bool) - 显示“加密”的过程，输出`byte`已经被重复编码几次了
 
 ### `Decrypt(byte, loopTime, debug = False)`
-This function will take the `byte` input parameter and decode it self with base64 `loopTime` times, then returns the decrypted content as a bytes object.
-#### Parameters
-`byte` (bytes) - input data<br>
-`loopTime` (int) - how many times should be `byte` decoded<br>
-`debug` (bool) - show additional information: shows the "decrypting" process, how many times `byte` has been decoded
+此函数将会把`byte`参数传入的数据使用Base64解码`loopTime`次，然后返回解密后的数据，返回的数据类型为`bytes`。
+#### 参数
+`byte` (bytes) - 输入数据<br>
+`loopTime` (int) - `byte`应该重复被base64解码几次<br>
+`debug` (bool) - 显示“解密”的过程，输出`byte`已经被重复解码几次了
 
 ### `TryDecrypt(byte, decryptLastTime = False, debug = False)`
-This function will take the `byte` input parameter will try to decode it as base64 infinite times until an exception has been raised by the `stdbase64.py`, then returns the decrypted content as a bytes object.
+此函数将会尝试将`byte`参数传入的数据使用base64解码无限次，直到`stdbase64.py`出现一个Exception，然后返回解密后的数据，返回的数据类型为`bytes`。
 #### Parameters
-`byte` (bytes) - input data<br>
-`decryptLastTime` (bool) - this parameter will decide if the decoding should keep decoding after the `stdbase64.py` raised an exception, this is implemented because `b64decode` from `stdbase64.py` with `validate = True` as parameter cannot decode a base64 encoded non-ASCII character, and enabling this will attempt to decode the encoded non-ascii character. And also enabling this while decoding encoded ASCII data will return a garbled bytes<br>
-`debug` (bool) - show additional information: shows the "decrypting" process, how many times has `byte` been decoded
+`byte` (bytes) - 输入数据<br>
+`decryptLastTime` (bool) - 此参数将会决定`stdbase64.py`出现Exception后继续解码一次，因为`stdbase64.py`的`b64decode`函数使用`validate = True`参数时，无法解码Base64编码的非ASCII字符，设置此参数为`True`会尝试解码非ASCII字符的base64数据。如果将此参数设置为`True`后解码base64编码的ASCII字符将会返回乱码<br>
+`debug` (bool) - 显示“解密”的过程，输出`byte`已经被重复解码几次了
 
 ### `EncryptToFile(byte, loopTime, path, debug = False)`
-This function will take the `byte` input parameter and encode it self with base64 `loopTime` times, then it writes the result to the file specified in `path`.
+此函数将会把`byte`参数传入的数据使用Base64编码`loopTime`次，然后，然后将加密后的数据写入`path`参数指定的文件。
 #### Parameters
-`byte` (bytes) - input data<br>
-`loopTime` (int) - how many times should be `byte` encoded<br>
-`path` (str) - the absolute or relative path of a file to be written or created<br>
-`debug` (bool) - show additional information: shows the "encrypting" process, how many times `byte` has been encoded
+`byte` (bytes) - 输入数据<br>
+`loopTime` (int) - `byte`应该重复被base64编码几次<br>
+`path` (str) - 写入文件的相对路径或绝对路径<br>
+`debug` (bool) - 显示“加密”的过程，输出`byte`已经被重复编码几次了
 
 ### `DecryptToFile(byte, loopTime, path, debug = False)`
-This function will take the `byte` input parameter and decode it self with base64 `loopTime` times, then it writes the result to the file specified in `path`.
+此函数将会把`byte`参数传入的数据使用Base64解码`loopTime`次，然后，然后将解密后的数据写入`path`参数指定的文件。
 #### Parameters
-`byte` (bytes) - input data<br>
-`loopTime` (int) - how many times should be `byte` decoded<br>
-`path` (str) - the absolute or relative path of a file to be written or created<br>
-`debug` (bool) - show additional information: shows the "decrypting" process, how many times `byte` has been decoded
+`byte` (bytes) - 输入数据<br>
+`loopTime` (int) - `byte`应该重复被base64解码几次<br>
+`path` (str) - 写入文件的相对路径或绝对路径<br>
+`debug` (bool) - 显示“解密”的过程，输出`byte`已经被重复解码几次了
 
 ### `DecryptFromFile(fileObj, loopTime, debug = False)`
-This function will read the `fileObj` file object (`open()`) supplied in the parameter and decode the content inside the file `loopTime` times, then returns the decrypted content as a bytes object.
+此函数将会读取`fileObj`参数传入的file对象（`open()`）然后将数据使用Base64解码`loopTime`次，最后返回解密后的数据，返回的数据类型为`bytes`。
 #### Parameters
-`fileObj` (`open()` object with open mode `rb`) - input data<br>
-`loopTime` (int) - how many times should be `fileObj` decoded<br>
-`debug` (bool) - show additional information: shows the "decrypting" process, how many times `byte` has been decoded
+`fileObj` (打开模式为`rb`的`open()`（file）对象) - 输入数据<br>
+`loopTime` (int) - `fileObj`应该重复被base64解码几次<br>
+`debug` (bool) - 显示“解密”的过程，输出`fileObj`已经被重复解码几次了
 
 ### `EncryptFromFile(fileObj, loopTime, debug = False)`
-This function will read the `fileObj` file object (`open()`) supplied in the parameter and encode the content inside the file `loopTime` times, then returns the encrypted content as a bytes object.
+此函数将会读取`fileObj`参数传入的file对象（`open()`）然后将数据使用Base64编码`loopTime`次，最后返回加密后的数据，返回的数据类型为`bytes`。
 #### Parameters
-`fileObj` (`open()` object with open mode `rb`) - input data<br>
-`loopTime` (int) - how many times should be `fileObj` encoded<br>
-`debug` (bool) - show additional information: shows the "encrypting" process, how many times `byte` has been encoded
+`fileObj` (打开模式为`rb`的`open()`（file）对象) - 输入数据<br>
+`loopTime` (int) - `fileObj`应该重复被base64解码几次<br>
+`debug` (bool) - 显示“加密”的过程，输出`fileObj`已经被重复编码几次了
 
 # End
 Congratulations, you have reached the end of this README (this is a documantation though). Here is some [resource](https://www.youtube.com/watch?v=dQw4w9WgXcQ) that might help you.
