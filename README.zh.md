@@ -1,34 +1,29 @@
 # Base64\*n
-A joke "encryption" algorithm which involves encoding base64 data with base64 n times
+一个玩具性质的“加密算法”把普通的Base64变成了Base64*N
 
-# WARNING
-This is a joke "encryption" algorithm, what it does is basically encode base64 data with base64, and therefore it's **NOT** secure.
-If you are using Solid State Drive, **DO NOT TRY TO TEST THIS MODULE REPEATEDLY ON YOUR SYSTEM**, this will shorten your SSD lifespan and I **AM NOT RESPONSIBLE FOR ANY DAMAGES EITHER FOR ANY EQUIPMENT DAMAGES AND/OR INAPPROPRIATE USE**, if you use this module, you assume all the responsibility for any consequences that will occur.
+# 警告！
+这玩意是一个特别艹蛋的加密算法，本质上是用base64来加密base64的数据，所以这玩意一点也不(重点)安全。
+如果你用的是SSD硬盘，别去一次又一次的试验这玩意，我敢打包票，这会让你的SSD更早报废，使用这个项目造成设备损坏的，保留免责权利(也就是我不管)，如果你因为使用这个项目造成不可逆伤害的，发生的后果自负。
+*我对你在这个项目上干的一切事情都不会负责的。
+#这玩意有啥用啊？
+没用，一点用都没有，基本上没啥用，唯一的作用是基准测试(范围包括你的CPU，HDD，SSD或许还有RAM)或者说是干翻你的电脑，干死你的硬盘，
+除了这些以外，没啥用了，严重的会造成内存溢出，因为吧，Python的内存管理不太可信(主观)
+请注意，如果在“EncryptToFile（）”或“Encrypt（）”中指定了一个大的“loopTime”，例如“loopTime=73”，则可能会创建一个大小为70或40 GiB的巨大文件，请因为算法的特色，这个文件的大小随“loopTime”的增加呈指数增长。
+# 这个算法有够安全吗
+不，这玩意一点都不安全，base64防君子不防小人，就算加密个几百次都没用，如果你想来个真正的加密算法，看看这个 [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) 而不是这个艹蛋的算法
+好了吗，孩子，接下来我们看一些更枯燥的东西，确保你能看得下去，可以考虑吃一点零食。
 
-**I AM NOT RESPONSIBLE WITH ANYTHING YOU DO WITH THIS MODULE**
 
-# Does this have any practical use?
-No, it doesn't. It's basically a base64 *Matroska*. I see no practical use besides benchmarking (either CPU, HDD, SSD or even RAM) or destroying SSD and hogging up the CPU, you may even get a memory overflow because I don't really trust Python's memory management.
-
-Please note that if a large `loopTime` has been specified in `EncryptToFile()` or `Encrypt()`, like something like `loopTime = 73`, you may end up creating a monstrous file with a size of 70 or 40 GiB, trust me on that one. The size increases exponentially with the `loopTime` increase.
-
-# Is this algorithm safe?
-No, it **isn't**, base64 is just an **encoding scheme and NOT an encryption algorithm**, therefore encoding base64 data with base64 several times **WILL NOT** make your data or data transfer safe and/or secure, if you are looking for that, please take look at [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) and not this
-
-U got it? GUUD. Let's dive into the nerdy stuff
 
 ![Pani Poni Dash - Dancing GIF](/docs/__pani_poni_dash__96c16f2f4669e8f7b7e7717dbda89411.gif)
 
-# Using this module
-This is a Python3 module, you can compile it to get better performance (but not much) using the `setup.py` or just use `base64N.py` and `stdbase64.py` (Please note that if you decided to use `setup.py` to compile the module, make sure you install cython by `pip3 install cython` and `python3 setup.py build_ext --inplace` to compile it)
 
-`base64N.py` is the main logic code for encoding or decoding base64 several times.
+#我咋用啊？
+这是一个Python3模块，您可以使用'setup.py'来编译它以获得更好的性能（但不是很多），或者只使用'base64N.py'和'stdbase64.py'（请注意，如果您决定使用'setup.py'来编译该模块，请确保通过'pip3 install cython'和'Python3 setup.py build_ext --inplace`'来安装cython从而编译它）
+base64N 是多次编码或解码base64的主要逻辑代码。
+stdbase64.py`只是从Python 3.8.1的标准模块库中获取的'base64'模块(从winx64版本提取出来的)
+要将它们导入到脚本中，请确保“base64N.py”和“stdbase64.py”这两个东西都还在（如果使用“setup.py”则为两个编译文件）位于同一文件夹中或安装在python模块库中。然后干就完了:import base64N
 
-`stdbase64.py` is just the `base64` module taken from the standard module library from Python 3.8.1 (specifically, taken from Windows x64 installation of Python 3.8.1)
-
-To import them to your script, make sure the `base64N.py` and `stdbase64.py` (or the two compiled files if you used the `setup.py`) is in the same folder or installed in your python module library. And just import them:
-
-`import base64N`
 
 ## 函数
 ### `Encrypt(byte, loopTime, debug = False)`
